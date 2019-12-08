@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 
 const Post = ({ post }) => {
   const classes = useStyles();
-  const { preview, title, selftext, url, subreddit } = post;
+  const { preview } = post;
   const img = preview ? preview.images[0].source.url.replace(/amp;/g, '')
     : 'https://i.redd.it/2qy7unjo2j331.png';
 
@@ -55,19 +55,19 @@ const Post = ({ post }) => {
                 disableRipple={true}
                 className={classes.button}
                 target="_blank"
-                href={url}>
+                href='/'>
           <CardActionArea>
             <CardMedia
               className={classes.media}
               image={img}
-              title={title}
+              title='This is title of the image'
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="h2">
-                {title}
+                Post 1
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                {truncateText(selftext, 100)}
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, error esse ipsum porro provident quae.
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -79,7 +79,7 @@ const Post = ({ post }) => {
             container
           >
             <Grid item>
-              <Button target="_blank" href={url} size="medium" color="primary">
+              <Button target="_blank" href='/' size="medium" color="primary">
                 Read More
               </Button>
             </Grid>
@@ -87,7 +87,7 @@ const Post = ({ post }) => {
               <Typography style={{ paddingTop: '0.5em' }}
                           color='secondary'
                           variant='body2'>
-                <strong>Subreddit: </strong>{subreddit}
+                <strong>Subreddit: </strong> subreddit
               </Typography>
             </Grid>
           </Grid>

@@ -32,24 +32,10 @@ const useStyles = makeStyles(theme => ({
 
 const App = () => {
   const classes = useStyles();
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   // Search Reddit
-  const search = async (searchTerm = '', searchLimit = 10, sortBy = 'new') => {
-    setLoading(true);
-    setPosts([]);
-    try {
-      const response = await fetch(`https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`);
-      const data = await response.json();
-      const result = data.data.children.map(data => data.data);
-      setPosts(result);
-      setLoading(false);
-
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
-    }
+  const search = async () => {
+    // ...
   };
 
   return (
@@ -60,8 +46,6 @@ const App = () => {
           <SearchForm classes={classes} search={search}/>
         </Container>
         <Container maxWidth="lg" className={classes.box}>
-          {loading && <Spinner/>}
-          {posts.length > 0 && <Posts posts={posts}/>}
         </Container>
       </ThemeProvider>
     </div>

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Button, MenuItem, Paper } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
 
 const sortByOptions = [
   {
@@ -43,13 +42,9 @@ const limitByOptions = [
 ];
 
 const SearchForm = ({classes, search}) => {
-  const [sortBy, setSortBy] = useState('new');
-  const [limitBy, setLimitBy] = useState(5);
-  const [searchTerm, setSearchTerm] = useState('');
 
   const handleOnSubmit = (e) => {
-    search(searchTerm, limitBy, sortBy);
-    setSearchTerm('');
+    // ...
   };
 
   return (
@@ -62,8 +57,6 @@ const SearchForm = ({classes, search}) => {
           <div className={classes.input}>
             <TextField
               fullWidth={true}
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
               id="standard-required"
               label="Search Term"
               placeholder="Enter your search term.." />
@@ -73,9 +66,7 @@ const SearchForm = ({classes, search}) => {
               id="standard-select-sortBy"
               select
               label="Sort By"
-              value={sortBy}
               fullWidth={true}
-              onChange={(e) => setSortBy(e.target.value)}
               helperText="How would you like to search?"
             >
               {sortByOptions.map(option => (
@@ -90,8 +81,6 @@ const SearchForm = ({classes, search}) => {
               id="standard-select-sortBy"
               select
               label="Limit"
-              value={limitBy}
-              onChange={(e) => setLimitBy(e.target.value)}
               fullWidth={true}
               placeholder='Limit'
               helperText="How many post would you like to see?"
