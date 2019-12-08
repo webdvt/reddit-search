@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d910aee-b101-46c0-87a4-6bec62b6107f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify.toml" beforeDir="false" afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575766064832</updated>
       <workItem from="1575766066035" duration="15296000" />
-      <workItem from="1575816154579" duration="5261000" />
+      <workItem from="1575816154579" duration="5830000" />
     </task>
     <servers />
   </component>
